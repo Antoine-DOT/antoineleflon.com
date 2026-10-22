@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root=/var/www/antoineleflon.com
+releases="$root/releases"
+install -d -m 0755 "$releases"
+incoming="$(mktemp -d "$root/.incoming.XXXXXX")"
+trap 'rm -rf -- "$incoming"' EXIT
+
+tar --extract --file=- --directory="$incoming" \
+  --no-same-owner --no-same-permissions --delay-directory-restore
+
+if find "$incoming" -type l -o -type b -o -type c -o -type p | grep -q .; then
+  echo "Unsupported file type in release." >&2
+  exit 1
+fi
+
+version="$incoming/.version"
+[[ -f "$version" ]] || { echo "Missing .version." >&2; exit 1; }
+commit="$(sed -n 's/.*"commit":"\([0-9a-f]\{40\}\)".*/\1/p' "$version")"
+[[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "Invalid commit metadata." >&2; exit 1; }
+[[ -f "$incoming/index.html" ]] || { echo "Missing index.html." >&2; exit 1; }
+
+release="$releases/$commit"
+if [[ ! -e "$release" ]]; then
+  mv "$incoming" "$release"
+  chmod -R a-w "$release"
+fi
+ln -sfn "releases/$commit" "$root/current.next"
+mv -Tf "$root/current.next" "$root/current"
+trap - EXIT
+
+printf 'deployed %s\n' "$commit"

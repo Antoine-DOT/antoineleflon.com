@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1066 698">
+  <g fill="#F5F1E8">
+
+    <!-- A — same silhouette as v7, only the circled lower corners softened -->
+    <path d="
+      M92 465
+      Q84 465 90 457
+      L294 276
+      Q309 262 322 257
+      Q337 252 347 263
+      Q365 282 365 310
+      V457
+      Q365 465 357 465
+      H335
+      Q327 465 327 457
+      V320
+      Q327 304 318 300
+      Q311 297 303 306
+      L149 459
+      Q144 465 136 465
+      Z"/>
+
+    <!-- Top bar — same diagonal-cut shape as v7, with small radii on all 4 circled corners -->
+    <path d="
+      M318 205
+      H901
+      Q907 205 904 211
+      L894 231
+      Q892 235 886 235
+      H304
+      Q298 235 301 229
+      L311 209
+      Q313 205 318 205
+      Z"/>
+
+    <!-- T stem — only the two lower corners softened -->
+    <path d="
+      M446 205
+      H496
+      V457
+      Q496 465 488 465
+      H454
+      Q446 465 446 457
+      Z"/>
+
+    <!-- L — preserved from v7; top corners and terminal cut softened only -->
+    <path d="
+      M574 255
+      H603
+      Q611 255 611 263
+      V389
+      Q611 431 653 431
+      H899
+      Q907 431 902 438
+      L896 459
+      Q893 465 886 465
+      H653
+      Q566 465 566 389
+      V263
+      Q566 255 574 255
+      Z"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+.env
+.env.local
+.DS_Store
+apps/web/node_modules
+apps/web/dist
+apps/web/build

@@ -1,0 +1,49 @@
+/* Shared closing contact block: orbit cards, WhatsApp first. */
+.contact-block { --contact-night: #15110f; --contact-ink: #f1ece4; --contact-ink-muted: #b4aaa0; --contact-hot: #ff5a1f; --contact-cta: #d13a0e; position: relative; overflow: hidden; padding-block: clamp(4rem, 7vw, 6rem); background: var(--contact-night); color: var(--contact-ink); }
+html[data-theme=dark] .contact-block { background: #1b1816; border-top: 1px solid var(--line); }
+.contact-block > .container { position: relative; z-index: 1; }
+.contact-block h2 { margin: 0 0 .8rem; font-size: clamp(2.3rem, 4.6vw, 4rem); }
+.contact-block > .container > p { max-width: 520px; margin: 0; color: var(--contact-ink-muted); }
+.contact-block__orbit { position: absolute; top: 50%; right: -200px; width: 560px; height: 560px; margin-top: -280px; border: 1px dashed #f1ece426; border-radius: 50%; animation: contact-spin 45s linear infinite; pointer-events: none; }
+.contact-block__orbit::after { content: ''; position: absolute; top: 50%; left: -5px; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--contact-hot); box-shadow: 0 0 16px var(--contact-hot); }
+@keyframes contact-spin { to { transform: rotate(360deg); } }
+.contact-block__actions { display: grid; grid-template-columns: 1.3fr 1.3fr repeat(3, minmax(0, 1fr)); gap: .75rem; margin-top: 2.5rem; }
+.contact-card { position: relative; display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; padding: 1.15rem 1.15rem 1.25rem; border: 1px solid #f1ece42e; color: var(--contact-ink); text-decoration: none; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.contact-card:hover { transform: translateY(-4px); border-color: var(--contact-hot); background: #ff5a1f0f; }
+.contact-card__icon { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #f1ece44d; border-radius: 50%; }
+.contact-card__icon svg { width: 19px; }
+.contact-card__icon i { position: absolute; inset: -7px; border-radius: 50%; opacity: 0; transition: opacity .25s ease; }
+.contact-card__icon i::after { content: ''; position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: var(--contact-hot); box-shadow: 0 0 10px var(--contact-hot); }
+.contact-card:hover .contact-card__icon i { opacity: 1; animation: contact-spin 1.6s linear infinite; }
+.contact-card__text { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.contact-card strong { font: 600 1.2rem 'Outfit', sans-serif; letter-spacing: -.02em; }
+.contact-card small { display: flex; align-items: center; gap: .45rem; color: var(--contact-ink-muted); font-size: .8rem; overflow-wrap: anywhere; }
+.contact-card__arrow { position: absolute; top: 1.15rem; right: 1.1rem; width: 18px; color: var(--contact-ink-muted); transition: transform .25s ease, color .25s ease; }
+.contact-card:hover .contact-card__arrow { color: var(--contact-hot); transform: translate(3px, -3px); }
+.contact-card:hover .contact-card__arrow.is-download { transform: none; animation: contact-drop .9s ease-in-out infinite; }
+@keyframes contact-drop { 50% { transform: translateY(4px); } }
+.contact-card.is-primary { border-color: transparent; background: linear-gradient(135deg, #c8360d, #ff7a24); color: #fff; box-shadow: 0 18px 40px #f04a1833; }
+.contact-card.is-primary:hover { background: linear-gradient(135deg, #d63c0f, #ff8a3a); }
+.contact-card.is-primary .contact-card__icon { border-color: #ffffff80; }
+.contact-card.is-primary .contact-card__icon i::after { background: #fff; box-shadow: 0 0 10px #fff; }
+.contact-card.is-primary small,.contact-card.is-primary .contact-card__arrow { color: #ffe6d8; }
+.contact-card.is-primary:hover .contact-card__arrow { color: #fff; }
+.contact-card small b { width: 7px; height: 7px; border-radius: 50%; background: #9dffc4; box-shadow: 0 0 0 0 #9dffc480; animation: contact-live 2s ease-out infinite; }
+@keyframes contact-live { 70%,100% { box-shadow: 0 0 0 7px #9dffc400; } }
+.contact-block__business { display: inline-flex; align-items: center; gap: .6rem; width: fit-content; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #f1ece42e; color: #ffb08a; font: 600 1.1rem 'Outfit', sans-serif; text-decoration: none; }
+.contact-block__business svg { width: 18px; transition: transform .2s ease; }
+.contact-block__business:hover svg { transform: translateX(5px); }
+
+@media (max-width: 900px) {
+  .contact-block__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-card.is-primary { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .contact-block__actions > a:nth-child(2) { grid-column: 1 / -1; }
+  .contact-card { padding: 1rem; }
+  .contact-block__orbit { right: -320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-block__orbit,.contact-card small b,.contact-card:hover .contact-card__icon i,.contact-card:hover .contact-card__arrow.is-download { animation: none; }
+  .contact-card:hover { transform: none; }
+}

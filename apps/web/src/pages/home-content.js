@@ -1,0 +1,38 @@
+export const homeContent = {
+  fr: {
+    title: 'Antoine Leflon — Cybersécurité, infrastructure & automatisation',
+    index: 'Systèmes · Sécurité · Automatisation',
+    lead: ['Je transforme des besoins concrets en ', 'outils et systèmes qui fonctionnent vraiment.'],
+    status: 'Disponible à l’international',
+    primary: ['Voir mon parcours', '/fr/parcours'],
+    secondary: ['Travailler avec ATL', '/atl'],
+    photoAlt: 'Antoine Leflon',
+    doorsIndex: '01 / Explorer',
+    doorsTitle: 'Par où commencer ?',
+    doors: [
+      { key: 'career', title: 'Parcours', text: 'Cinq ans entre le terrain et la gouvernance, un Master en cybersécurité.', cta: 'Voir le parcours', to: '/fr/parcours' },
+      { key: 'projects', title: 'Projets', text: 'ATL-Lab, mon infrastructure en production, et Malun, une application pour apprendre le chinois.', cta: 'Voir les projets', to: '/fr/projets' },
+      { key: 'atl', title: 'ATL Corporation', text: 'Automatisation, cybersécurité, sites internet et IA pour les TPE et PME.', cta: 'Découvrir ATL', to: '/atl' },
+    ],
+    contactTitle: 'Envie d’en parler ?',
+    contactText: 'Pour un poste, une mission ou simplement échanger, je réponds personnellement.',
+  },
+  en: {
+    title: 'Antoine Leflon — Cybersecurity, Infrastructure & Automation',
+    index: 'Systems · Security · Automation',
+    lead: ['I turn concrete needs into ', 'tools and systems that actually work.'],
+    status: 'Available internationally',
+    primary: ['See my experience', '/en/experience'],
+    secondary: ['Work with ATL', '/en/atl'],
+    photoAlt: 'Antoine Leflon',
+    doorsIndex: '01 / Explore',
+    doorsTitle: 'Where to start?',
+    doors: [
+      { key: 'career', title: 'Experience', text: 'Five years between the field and governance, a Master’s in cybersecurity.', cta: 'See my experience', to: '/en/experience' },
+      { key: 'projects', title: 'Projects', text: 'ATL-Lab, my infrastructure in production, and Malun, an app to learn Chinese.', cta: 'See the projects', to: '/en/projects' },
+      { key: 'atl', title: 'ATL Corporation', text: 'Automation, cybersecurity, websites and AI for small businesses.', cta: 'Discover ATL', to: '/en/atl' },
+    ],
+    contactTitle: 'Want to talk?',
+    contactText: 'For a role, a mission or simply a conversation, I reply personally.',
+  },
+};

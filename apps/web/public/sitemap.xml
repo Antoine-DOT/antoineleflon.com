@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://antoineleflon.com/fr</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en"/><xhtml:link rel="alternate" hreflang="x-default" href="https://antoineleflon.com/"/></url>
+  <url><loc>https://antoineleflon.com/en</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en"/><xhtml:link rel="alternate" hreflang="x-default" href="https://antoineleflon.com/"/></url>
+  <url><loc>https://antoineleflon.com/fr/projets</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/projets"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/projects"/></url>
+  <url><loc>https://antoineleflon.com/en/projects</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/projets"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/projects"/></url>
+  <url><loc>https://antoineleflon.com/fr/parcours</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/parcours"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/experience"/></url>
+  <url><loc>https://antoineleflon.com/en/experience</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/parcours"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/experience"/></url>
+  <url><loc>https://antoineleflon.com/atl</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/atl"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/atl"/></url>
+  <url><loc>https://antoineleflon.com/en/atl</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/atl"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/atl"/></url>
+  <url><loc>https://antoineleflon.com/fr/projets/atl-lab</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/projets/atl-lab"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/projects/atl-lab"/></url>
+  <url><loc>https://antoineleflon.com/en/projects/atl-lab</loc><xhtml:link rel="alternate" hreflang="fr" href="https://antoineleflon.com/fr/projets/atl-lab"/><xhtml:link rel="alternate" hreflang="en" href="https://antoineleflon.com/en/projects/atl-lab"/></url>
+  <url><loc>https://antoineleflon.com/projects/hanzi-learning-app</loc></url>
+</urlset>
