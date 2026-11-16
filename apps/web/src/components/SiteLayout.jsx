@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { BriefcaseBusiness, Download, Linkedin, Mail, Menu, MessageCircle, Moon, Sun, X } from 'lucide-react';
+import { BriefcaseBusiness, Download, Github, Linkedin, Mail, Menu, MessageCircle, Moon, Sun, X } from 'lucide-react';
 import BrandMark from '@/components/BrandMark';
 import { LANGUAGE_KEY, localizedPath, normalizePath, useLocale, useLocalizedContent } from '@/i18n';
 
@@ -51,6 +51,6 @@ export default function SiteLayout() {
         <button className="theme-button" onClick={toggleTheme} aria-label={t.ui.theme} title={t.ui.theme}>{theme === 'dark' ? <Sun size={17}/> : <Moon size={17}/>}<span className="sr-only">{theme === 'dark' ? t.ui.light : t.ui.dark}</span></button>
       </nav>
     </div></header><main id="main"><Outlet /></main>
-    <footer className={`site-footer${isSolarPage ? ' solar-footer' : ''}`}><div className="container footer-row"><div className="footer-identity"><strong>Antoine Leflon</strong><p>{t.footer} <Link to={locale === 'fr' ? '/fr/projets/atl-lab' : '/en/projects/atl-lab'}>{locale === 'fr' ? 'Hébergé sur ATL-Lab' : 'Hosted on ATL-Lab'}</Link></p></div><nav aria-label={t.ui.social}><a href="https://www.linkedin.com/in/aleflon-cybersec/" target="_blank" rel="noopener noreferrer"><Linkedin size={15}/>LinkedIn</a><a href="https://www.malt.fr/profile/antoineleflon1" target="_blank" rel="noopener noreferrer"><BriefcaseBusiness size={15}/>Malt</a><a href="mailto:aleflonpro@gmail.com"><Mail size={15}/>{locale === 'fr' ? 'E-mail' : 'Email'}</a><a href="https://wa.me/33628552568" target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>WhatsApp</a><a href="/Antoine_Leflon_RESUME2026.pdf"><Download size={15}/>{t.nav.resume}</a></nav><small>© 2026 Antoine Leflon</small></div></footer>
+    <footer className={`site-footer${isSolarPage ? ' solar-footer' : ''}`}><div className="container footer-row"><div className="footer-identity"><strong>Antoine Leflon</strong><p>{t.footer} <Link to={locale === 'fr' ? '/fr/projets/atl-lab' : '/en/projects/atl-lab'}>{locale === 'fr' ? 'Hébergé sur ATL-Lab' : 'Hosted on ATL-Lab'}</Link></p></div><nav aria-label={t.ui.social}><a href="https://www.linkedin.com/in/aleflon-cybersec/" target="_blank" rel="noopener noreferrer"><Linkedin size={15}/>LinkedIn</a><a href="https://github.com/Antoine-DOT" target="_blank" rel="noopener noreferrer"><Github size={15}/>GitHub</a><a href="https://www.malt.fr/profile/antoineleflon1" target="_blank" rel="noopener noreferrer"><BriefcaseBusiness size={15}/>Malt</a><a href="mailto:aleflonpro@gmail.com"><Mail size={15}/>{locale === 'fr' ? 'E-mail' : 'Email'}</a><a href="https://wa.me/33628552568" target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/>WhatsApp</a><a href="/Antoine_Leflon_RESUME2026.pdf"><Download size={15}/>{t.nav.resume}</a></nav><small>© 2026 Antoine Leflon · <Link to={locale === 'fr' ? '/fr/mentions-legales' : '/en/legal-notice'}>{locale === 'fr' ? 'Mentions légales' : 'Legal notice'}</Link></small></div></footer>
   </div>;
 }

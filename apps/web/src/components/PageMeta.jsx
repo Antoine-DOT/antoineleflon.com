@@ -1,11 +1,15 @@
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-const defaultImage = { src: 'https://antoineleflon.com/og-antoine-leflon-2026.png', width: 1731, height: 909 };
+const defaultImages = {
+  fr: { src: 'https://antoineleflon.com/og-antoine-leflon-fr.jpg', width: 1200, height: 630 },
+  en: { src: 'https://antoineleflon.com/og-antoine-leflon-en.jpg', width: 1200, height: 630 },
+};
 
-export default function PageMeta({ title, description, noindex=false, locale, alternatePath, image=defaultImage, imageAlt }) {
+export default function PageMeta({ title, description, noindex=false, locale, alternatePath, image: imageProp, imageAlt }) {
   const location = useLocation();
   const language = locale || (location.pathname === '/atl' || location.pathname === '/fr' || location.pathname.startsWith('/fr/') ? 'fr' : 'en');
+  const image = imageProp || defaultImages[language];
   const canonical = `https://antoineleflon.com${location.pathname.replace(/\/$/, '') || '/'}`;
   const alternate = alternatePath && `https://antoineleflon.com${alternatePath}`;
   return <Helmet htmlAttributes={{ lang:language }}><title>{title}</title><meta name="description" content={description} />{noindex&&<meta name="robots" content="noindex, follow" />}

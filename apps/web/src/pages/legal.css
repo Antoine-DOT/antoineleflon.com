@@ -1,0 +1,6 @@
+.legal-page { max-width: 760px; padding-block: clamp(7rem, 14vw, 9rem) clamp(4rem, 8vw, 6rem); }
+.legal-page h1 { margin: .4rem 0 .6rem; font: 600 clamp(2.4rem, 6vw, 3.6rem) 'Outfit', sans-serif; line-height: 1.05; }
+.legal-page__updated { color: var(--muted); font-size: .9rem; }
+.legal-page section { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.legal-page h2 { margin-bottom: .9rem; font: 600 1.3rem 'Outfit', sans-serif; }
+.legal-page section p { margin-top: .6rem; color: var(--muted); line-height: 1.7; }

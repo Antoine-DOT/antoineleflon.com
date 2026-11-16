@@ -27,7 +27,7 @@ export default function AtlCommercialPage() {
   }, []);
 
   return <div className="atl-page solar-page atl-orbit-page">
-    <PageMeta title={c.title} description={c.description} alternatePath={isFr ? '/en/atl' : '/atl'} image={{ src: `https://antoineleflon.com/og-atl-${isFr ? 'fr' : 'en'}.jpg`, width: 1800, height: 945 }} imageAlt={c.brand} />
+    <PageMeta title={c.title} description={c.description} alternatePath={isFr ? '/en/atl' : '/atl'} image={{ src: `https://antoineleflon.com/og-atl-${isFr ? 'fr' : 'en'}-1200.jpg`, width: 1200, height: 630 }} imageAlt={c.brand} />
 
     <section className="atl-hero atl-solar-hero">
       <div className="container">

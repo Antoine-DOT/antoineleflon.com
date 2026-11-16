@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import SiteLayout from '@/components/SiteLayout';
 import AtlCommercialPage from '@/pages/AtlCommercialPage';
 import HomePage from '@/pages/HomePage';
+import LegalPage from '@/pages/LegalPage';
 import AtlLabPage from '@/pages/AtlLabPage';
 import CareerPage from '@/pages/CareerPage';
 import { HanziPage, NotFoundPage, ProjectsPage } from '@/pages/SitePages';
@@ -39,7 +40,9 @@ export default function App() {
       <Route path="about" element={<Navigate to="/en" replace />} /><Route path="skills" element={<Navigate to="/en/experience" replace />} />
       <Route path="fr/projets/atl-lab" element={<AtlLabPage />} /><Route path="en/projects/atl-lab" element={<AtlLabPage />} />
       <Route path="projects/atl-lab" element={<LegacyLabRoute />} />
-      <Route path="projects/hanzi-learning-app" element={<HanziPage />} />
+      <Route path="fr/mentions-legales" element={<LegalPage />} /><Route path="en/legal-notice" element={<LegalPage />} />
+      <Route path="projects/malun" element={<HanziPage />} />
+      <Route path="projects/hanzi-learning-app" element={<Navigate to="/projects/malun" replace />} />
       <Route path="atl" caseSensitive={false} element={<AtlRoute />} />
     </Route>
     <Route path="*" element={<NotFoundPage />} />

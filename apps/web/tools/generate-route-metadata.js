@@ -4,7 +4,10 @@ import { dirname, resolve } from 'node:path';
 const dist = resolve(import.meta.dirname, '../../../dist/apps/web');
 const template = readFileSync(resolve(dist, 'index.html'), 'utf8');
 const origin = 'https://antoineleflon.com';
-const defaultImage = { src: `${origin}/og-antoine-leflon-2026.png`, width: 1731, height: 909 };
+const defaultImages = {
+  fr: { src: `${origin}/og-antoine-leflon-fr.jpg`, width: 1200, height: 630 },
+  en: { src: `${origin}/og-antoine-leflon-en.jpg`, width: 1200, height: 630 },
+};
 
 const routes = [
   { path: '/fr', language: 'fr', title: 'Antoine Leflon — Cybersécurité, infrastructure & automatisation', description: 'Le site personnel et professionnel d’Antoine Leflon : cybersécurité, infrastructure, gestion de projet et réalisations techniques.', alternate: '/en' },
@@ -15,8 +18,8 @@ const routes = [
   { path: '/en/experience', language: 'en', title: 'Experience · Antoine Leflon', description: 'Antoine Leflon’s experience: IT support in heavy industry, cybersecurity and governance in a large group, then independent work with ATL Corporation.', alternate: '/fr/parcours' },
   { path: '/fr/projets/atl-lab', language: 'fr', title: 'ATL-Lab · Antoine Leflon', description: 'ATL-Lab, l’infrastructure personnelle d’Antoine Leflon : un serveur Proxmox segmenté, supervisé et déployé comme en entreprise. Ce site tourne dessus.', alternate: '/en/projects/atl-lab' },
   { path: '/en/projects/atl-lab', language: 'en', title: 'ATL-Lab · Antoine Leflon', description: 'ATL-Lab, Antoine Leflon’s personal infrastructure: a Proxmox server segmented, monitored and deployed like an enterprise system. This website runs on it.', alternate: '/fr/projets/atl-lab' },
-  { path: '/atl', language: 'fr', title: 'ATL Corporation · Informatique pour TPE et PME, missions cybersécurité en freelance', description: 'Automatisation, IA, site internet et cybersécurité pour les TPE et PME. Missions longues en freelance (GRC, NIS2, gestion des vulnérabilités) pour les grands groupes et les ESN.', alternate: '/en/atl', image: { src: `${origin}/og-atl-fr.jpg`, width: 1800, height: 945, alt: 'ATL Corporation · Services informatiques' } },
-  { path: '/en/atl', language: 'en', title: 'ATL Corporation · IT for small businesses, freelance cybersecurity missions', description: 'Automation, AI, websites and cybersecurity for small businesses. Long freelance missions (GRC, NIS2, vulnerability management) for large groups and IT consultancies.', alternate: '/atl', image: { src: `${origin}/og-atl-en.jpg`, width: 1800, height: 945, alt: 'ATL Corporation · IT services' } },
+  { path: '/atl', language: 'fr', title: 'ATL Corporation · Informatique pour TPE et PME, missions cybersécurité en freelance', description: 'Automatisation, IA, site internet et cybersécurité pour les TPE et PME. Missions longues en freelance (GRC, NIS2, gestion des vulnérabilités) pour les grands groupes et les ESN.', alternate: '/en/atl', image: { src: `${origin}/og-atl-fr-1200.jpg`, width: 1200, height: 630, alt: 'ATL Corporation · Services informatiques' } },
+  { path: '/en/atl', language: 'en', title: 'ATL Corporation · IT for small businesses, freelance cybersecurity missions', description: 'Automation, AI, websites and cybersecurity for small businesses. Long freelance missions (GRC, NIS2, vulnerability management) for large groups and IT consultancies.', alternate: '/atl', image: { src: `${origin}/og-atl-en-1200.jpg`, width: 1200, height: 630, alt: 'ATL Corporation · IT services' } },
 ];
 
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
@@ -25,7 +28,7 @@ const replaceMeta = (html, attribute, key, value) => html.replace(new RegExp(`<m
 function render(route) {
   const canonical = `${origin}${route.path}`;
   const altLanguage = route.language === 'fr' ? 'en' : 'fr';
-  const image = route.image || defaultImage;
+  const image = route.image || defaultImages[route.language];
   const imageAlt = image.alt || (route.language === 'fr'
     ? 'Antoine Leflon — cybersécurité, infrastructure et automatisation'
     : 'Antoine Leflon — cybersecurity, infrastructure and automation');

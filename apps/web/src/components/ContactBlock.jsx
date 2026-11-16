@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, ArrowUpRight, BriefcaseBusiness, Download, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, BriefcaseBusiness, Download, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLocale } from '@/i18n';
 import './contact-block.css';
@@ -8,12 +8,13 @@ const contacts = [
   { key: 'whatsapp', href: 'https://wa.me/33628552568', icon: MessageCircle, external: true, primary: true },
   { key: 'email', href: `mailto:${email}`, icon: Mail },
   { key: 'linkedin', href: 'https://www.linkedin.com/in/aleflon-cybersec/', icon: Linkedin, external: true },
+  { key: 'github', href: 'https://github.com/Antoine-DOT', icon: Github, external: true },
   { key: 'malt', href: 'https://www.malt.fr/profile/antoineleflon1', icon: BriefcaseBusiness, external: true },
   { key: 'resume', href: '/Antoine_Leflon_RESUME2026.pdf', icon: Download, download: true },
 ];
 const labels = {
-  fr: { whatsapp: ['WhatsApp', 'Le plus rapide'], email: ['E-mail', email], linkedin: ['LinkedIn', 'Mon réseau pro'], malt: ['Malt', 'Missions freelance'], resume: ['CV', 'PDF, en anglais'] },
-  en: { whatsapp: ['WhatsApp', 'The fastest way'], email: ['Email', email], linkedin: ['LinkedIn', 'My professional network'], malt: ['Malt', 'Freelance missions'], resume: ['Resume', 'PDF'] },
+  fr: { whatsapp: ['WhatsApp', 'Le plus rapide'], email: ['E-mail', email], linkedin: ['LinkedIn', 'Mon réseau pro'], github: ['GitHub', 'Mon code, en public'], malt: ['Malt', 'Missions freelance'], resume: ['CV', 'PDF, en anglais'] },
+  en: { whatsapp: ['WhatsApp', 'The fastest way'], email: ['Email', email], linkedin: ['LinkedIn', 'My professional network'], github: ['GitHub', 'My public code'], malt: ['Malt', 'Freelance missions'], resume: ['Resume', 'PDF'] },
 };
 
 // Closing contact block shared by the home and career pages.

@@ -1,5 +1,5 @@
-// ATL-Lab case study copy. Facts come from the private lab documentation;
-// addresses, VLAN IDs, hostnames and rule IDs stay private.
+// ATL-Lab case study copy. Facts come from infrastructure/README.md and
+// ATL-LAB-INGRESS.md; addresses, VLAN IDs, hostnames and rule IDs stay private.
 export const labContent = {
   fr: {
     title: 'ATL-Lab · Antoine Leflon',
@@ -20,14 +20,14 @@ export const labContent = {
     mapLead: 'Chaque zone vit dans son propre réseau. Pour aller de l’une à l’autre, il faut traverser le pare-feu, qui bloque tout ce qui n’est pas explicitement autorisé.',
     mapFlows: [
       ['visit', 'Une visite depuis Internet'],
-      ['app', 'Proxy → Malun : un seul port'],
+      ['app', 'Proxy → Applications : un seul port'],
       ['deploy', 'Déploiement : une archive, pas de shell'],
       ['observe', 'Observer : lecture seule, vers chaque zone'],
     ],
     mapLabels: { internet: 'Internet', firewall: 'Pare-feu' },
     zones: [
       ['Public', 'Reverse proxy, ce site, Subli, Preview privée', 'La seule zone joignable depuis le web. La Preview, elle, ne répond qu’au VPN.', 'Proxy, site, Preview'],
-      ['Applications', 'Malun, sa base PostgreSQL et son service d’identité', 'Le proxy n’y accède que sur un seul port, vers une seule machine.', 'Malun, Keycloak'],
+      ['Applications', 'L’ancienne production de Malun, à l’arrêt. Devenue une app mobile, Malun tourne désormais sur un VPS loué en UE ; le lab garde le développement et la Preview.', 'Le proxy n’y accède que sur un seul port, vers une seule machine.', 'Ancienne prod'],
       ['Cœur', 'DNS, heure, journaux, supervision, bastion SSH', 'Les services dont tout le reste dépend.', 'DNS, logs, métriques'],
       ['Dev & IA', 'Machine de développement, agents IA, mémoire commune', 'Là où les changements sont préparés, testés et documentés.', 'Claude Code, Codex'],
       ['Observation', 'Observer', 'Lit l’état de toutes les machines et de l’hyperviseur, sans aucun droit de modification.', 'Lecture seule'],
@@ -149,14 +149,14 @@ export const labContent = {
     mapLead: 'Each zone lives on its own network. Moving from one to another means crossing the firewall, which blocks anything not explicitly allowed.',
     mapFlows: [
       ['visit', 'A visit from the Internet'],
-      ['app', 'Proxy → Malun: a single port'],
+      ['app', 'Proxy → Applications: a single port'],
       ['deploy', 'Deployment: an archive, no shell'],
       ['observe', 'Observer: read-only, towards every zone'],
     ],
     mapLabels: { internet: 'Internet', firewall: 'Firewall' },
     zones: [
       ['Public', 'Reverse proxy, this site, Subli, private Preview', 'The only zone reachable from the web. The Preview only answers over VPN.', 'Proxy, site, Preview'],
-      ['Applications', 'Malun, its PostgreSQL database and identity service', 'The proxy reaches it on a single port, to a single machine.', 'Malun, Keycloak'],
+      ['Applications', 'Malun’s former production, now stopped. Since it became a mobile app, Malun runs on a rented VPS in the EU; the lab keeps development and the Preview.', 'The proxy reaches it on a single port, to a single machine.', 'Former prod'],
       ['Core', 'DNS, time, logs, monitoring, SSH bastion', 'The services everything else depends on.', 'DNS, logs, metrics'],
       ['Dev & AI', 'Development machine, AI agents, shared memory', 'Where changes are prepared, tested and documented.', 'Claude Code, Codex'],
       ['Observation', 'Observer', 'Reads the state of every machine and of the hypervisor, with no right to change anything.', 'Read-only'],

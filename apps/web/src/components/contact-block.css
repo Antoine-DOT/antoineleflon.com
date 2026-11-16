@@ -7,7 +7,7 @@ html[data-theme=dark] .contact-block { background: #1b1816; border-top: 1px soli
 .contact-block__orbit { position: absolute; top: 50%; right: -200px; width: 560px; height: 560px; margin-top: -280px; border: 1px dashed #f1ece426; border-radius: 50%; animation: contact-spin 45s linear infinite; pointer-events: none; }
 .contact-block__orbit::after { content: ''; position: absolute; top: 50%; left: -5px; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--contact-hot); box-shadow: 0 0 16px var(--contact-hot); }
 @keyframes contact-spin { to { transform: rotate(360deg); } }
-.contact-block__actions { display: grid; grid-template-columns: 1.3fr 1.3fr repeat(3, minmax(0, 1fr)); gap: .75rem; margin-top: 2.5rem; }
+.contact-block__actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-top: 2.5rem; }
 .contact-card { position: relative; display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; padding: 1.15rem 1.15rem 1.25rem; border: 1px solid #f1ece42e; color: var(--contact-ink); text-decoration: none; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
 .contact-card:hover { transform: translateY(-4px); border-color: var(--contact-hot); background: #ff5a1f0f; }
 .contact-card__icon { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #f1ece44d; border-radius: 50%; }
@@ -36,9 +36,9 @@ html[data-theme=dark] .contact-block { background: #1b1816; border-top: 1px soli
 
 @media (max-width: 900px) {
   .contact-block__actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact-card.is-primary { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
+  .contact-card.is-primary { grid-column: 1 / -1; }
   .contact-block__actions > a:nth-child(2) { grid-column: 1 / -1; }
   .contact-card { padding: 1rem; }
   .contact-block__orbit { right: -320px; }

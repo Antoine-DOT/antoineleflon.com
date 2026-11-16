@@ -19,7 +19,7 @@ export function preferredLocale(storage, languages = []) {
   return languages.some(language => language.toLowerCase().startsWith('fr')) ? 'fr' : 'en';
 }
 
-const routePairs = [['/fr','/en'],['/fr/projets','/en/projects'],['/fr/parcours','/en/experience'],['/fr/projets/atl-lab','/en/projects/atl-lab']];
+const routePairs = [['/fr','/en'],['/fr/projets','/en/projects'],['/fr/parcours','/en/experience'],['/fr/projets/atl-lab','/en/projects/atl-lab'],['/fr/mentions-legales','/en/legal-notice']];
 
 export function localizedPath(rawPathname, locale) {
   const pathname = normalizePath(rawPathname);
