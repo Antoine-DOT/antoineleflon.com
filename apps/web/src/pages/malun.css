@@ -8,3 +8,5 @@
   .malun-shots li { scroll-snap-align: start; }
 }
 @media (min-width: 901px) { .malun-page .lab-origin { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Approved, not yet on the App Store: amber, like the Malun status on the projects page. */
+.malun-page .lab-live i { background: #ff9e2c; box-shadow: 0 0 0 4px #ff9e2c26; animation: none; }

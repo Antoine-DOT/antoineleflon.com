@@ -9,7 +9,7 @@ export default function SiteLayout() {
   const locale = useLocale();
   const location = useLocation(); const [open, setOpen] = useState(false);
   const pathname = normalizePath(location.pathname);
-  const isSolarPage = ['/fr', '/en', '/fr/projets', '/en/projects', '/fr/parcours', '/en/experience', '/atl', '/fr/atl', '/en/atl', '/fr/projets/atl-lab', '/en/projects/atl-lab'].includes(pathname.toLowerCase());
+  const isSolarPage = ['/fr', '/en', '/fr/projets', '/en/projects', '/fr/parcours', '/en/experience', '/atl', '/fr/atl', '/en/atl', '/fr/projets/atl-lab', '/en/projects/atl-lab', '/fr/projets/malun', '/en/projects/malun'].includes(pathname.toLowerCase());
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'dark');
   const base = `/${locale}`;
   const items = [[base, t.nav.home], [locale === 'fr' ? '/fr/projets' : '/en/projects', t.nav.projects], [locale === 'fr' ? '/fr/parcours' : '/en/experience', t.nav.experience], [locale === 'fr' ? '/atl' : '/en/atl', 'ATL']];
