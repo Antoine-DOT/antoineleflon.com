@@ -31,6 +31,7 @@ export default function MalunPage() {
       <div className="lab-intro__copy">
         <p>{c.lead}</p>
         <p className="lab-live"><i aria-hidden="true" />{c.status}</p>
+        <a className="solar-link" href="https://apps.apple.com/app/id6828634809" target="_blank" rel="noopener noreferrer">{c.store}<ExternalLink size={16} aria-hidden="true" /></a>
         <a className="solar-link" href="https://malun.app" target="_blank" rel="noopener noreferrer">{c.open}<ExternalLink size={16} aria-hidden="true" /></a>
       </div>
       <i aria-hidden="true" />
