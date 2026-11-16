@@ -5,7 +5,8 @@ import HomePage from '@/pages/HomePage';
 import LegalPage from '@/pages/LegalPage';
 import AtlLabPage from '@/pages/AtlLabPage';
 import CareerPage from '@/pages/CareerPage';
-import { HanziPage, NotFoundPage, ProjectsPage } from '@/pages/SitePages';
+import MalunPage from '@/pages/MalunPage';
+import { NotFoundPage, ProjectsPage } from '@/pages/SitePages';
 import { preferredLocale } from '@/i18n';
 
 function LanguageEntry() {
@@ -20,6 +21,13 @@ function LegacyLabRoute() {
   try { storage = window.localStorage; } catch { storage = undefined; }
   const locale = preferredLocale(storage, navigator.languages || [navigator.language]);
   return <Navigate to={locale === 'fr' ? '/fr/projets/atl-lab' : '/en/projects/atl-lab'} replace />;
+}
+
+function LegacyMalunRoute() {
+  let storage;
+  try { storage = window.localStorage; } catch { storage = undefined; }
+  const locale = preferredLocale(storage, navigator.languages || [navigator.language]);
+  return <Navigate to={locale === 'fr' ? '/fr/projets/malun' : '/en/projects/malun'} replace />;
 }
 
 function AtlRoute() {
@@ -41,8 +49,9 @@ export default function App() {
       <Route path="fr/projets/atl-lab" element={<AtlLabPage />} /><Route path="en/projects/atl-lab" element={<AtlLabPage />} />
       <Route path="projects/atl-lab" element={<LegacyLabRoute />} />
       <Route path="fr/mentions-legales" element={<LegalPage />} /><Route path="en/legal-notice" element={<LegalPage />} />
-      <Route path="projects/malun" element={<HanziPage />} />
-      <Route path="projects/hanzi-learning-app" element={<Navigate to="/projects/malun" replace />} />
+      <Route path="fr/projets/malun" element={<MalunPage />} /><Route path="en/projects/malun" element={<MalunPage />} />
+      <Route path="projects/malun" element={<LegacyMalunRoute />} />
+      <Route path="projects/hanzi-learning-app" element={<LegacyMalunRoute />} />
       <Route path="atl" caseSensitive={false} element={<AtlRoute />} />
     </Route>
     <Route path="*" element={<NotFoundPage />} />

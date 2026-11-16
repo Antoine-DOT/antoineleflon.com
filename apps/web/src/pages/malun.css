@@ -1,0 +1,10 @@
+.malun-intro .solar-link { margin-top: 1.4rem; }
+.malun-shots { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+.malun-shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.malun-shots__note { margin: 1.2rem 0 0; color: var(--muted); font-size: .8rem; }
+.malun-page .lab-choices { align-items: start; }
+@media (max-width: 900px) {
+  .malun-shots { grid-template-columns: repeat(6, 62%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+  .malun-shots li { scroll-snap-align: start; }
+}
+@media (min-width: 901px) { .malun-page .lab-origin { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
